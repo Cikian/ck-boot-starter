@@ -40,6 +40,12 @@
 	</repositories>
 	
 	<dependencies>
+		<dependency>
+			<groupId>cn.cikian</groupId>
+			<artifactId>cik-oss</artifactId>
+			<version>${ck.oss.version}</version>
+		</dependency>
+
 		<!--jeecg-tools-->
 		<dependency>
 			<groupId>org.jeecgframework.boot3</groupId>

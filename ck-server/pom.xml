@@ -28,6 +28,9 @@
 	</parent>
 
 	<properties>
+		<!-- cikian服务 -->
+		<ck.oss.version>0.2.8</ck.oss.version>
+
 		<jeecgboot.version>3.9.5</jeecgboot.version>
 		<jeecg-starter.version>3.9.5</jeecg-starter.version>
 		<skipTests>true</skipTests>

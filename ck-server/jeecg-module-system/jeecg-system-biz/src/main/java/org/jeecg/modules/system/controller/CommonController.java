@@ -1,5 +1,6 @@
 package org.jeecg.modules.system.controller;
 
+import cn.cikian.oss.service.OssServiceContext;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.jeecg.common.api.vo.Result;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -48,6 +50,12 @@ public class CommonController {
     @Value(value="${jeecg.uploadType}")
     private String uploadType;
 
+    @Value(value="${ck.oss.object-dir-prefix}")
+    private String dirPrefix;
+
+    @Autowired
+    private OssServiceContext cikOss;
+
     /**
      * @Author 政辉
      * @return
@@ -79,7 +87,12 @@ public class CommonController {
         }
         if(CommonConstant.UPLOAD_TYPE_LOCAL.equals(uploadType)){
             savePath = this.uploadLocal(file,bizPath);
-        }else{
+        } else if (CommonConstant.UPLOAD_TYPE_CIKOSS.equals(uploadType)) {
+            if (!StringUtils.hasText(dirPrefix)) {
+                dirPrefix = "";
+            }
+            savePath = cikOss.putObject(dirPrefix + File.separator + bizPath + File.separator + file.getOriginalFilename(), file.getInputStream()).toString();
+        } else{
             savePath = CommonUtils.upload(file, bizPath, uploadType);
         }
         if(oConvertUtils.isNotEmpty(savePath)){

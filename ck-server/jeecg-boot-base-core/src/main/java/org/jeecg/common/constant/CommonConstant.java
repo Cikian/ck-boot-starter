@@ -242,11 +242,12 @@ public interface CommonConstant {
     String ONLINE_PARAM_VAL_IS_FALSE = "N";
 
     /**
-     * 文件上传类型（本地：local，Minio：minio，阿里云：alioss）
+     * 文件上传类型（本地：local，Minio：minio，阿里云：alioss，cik-oss：cikian OSS服务）
      */
     String UPLOAD_TYPE_LOCAL = "local";
     String UPLOAD_TYPE_MINIO = "minio";
     String UPLOAD_TYPE_OSS = "alioss";
+    String UPLOAD_TYPE_CIKOSS = "cikoss";
 
     /**
      * 文档上传自定义桶名称 (私有加密桶名)—— 知识库功能
