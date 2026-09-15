@@ -146,7 +146,7 @@ spring:
         master:
           url: jdbc:mysql://127.0.0.1:3306/ck-server?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
           username: root
-          password: root
+          password: 123qwe!@#
           driver-class-name: com.mysql.cj.jdbc.Driver
 #        # shardingjdbc数据源
 #        sharding-db:
@@ -441,7 +441,7 @@ ck:
   oss:
     enable: true
     provider: upyun
-    endpoint: https://download.example.cn/
+    endpoint: https://oss.example.cn/
     access-key: xxx
     secret-key: 2i-xxxxx
     bucket: your-bucket

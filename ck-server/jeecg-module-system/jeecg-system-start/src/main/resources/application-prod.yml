@@ -407,3 +407,14 @@ justauth:
     type: default
     prefix: 'demo::'
     timeout: 1h
+ck:
+  oss:
+    enable: true
+    provider: upyun
+    endpoint: https://oss.example.cn/
+    access-key: xxx
+    secret-key: 2i-xxxxx
+    bucket: your-bucket
+    expire: 3600
+    object-dir-prefix: dir
+    api-domain: TELECOM
