@@ -52,6 +52,12 @@
 			<version>${ck.log.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>cn.cikian</groupId>
+			<artifactId>crydis</artifactId>
+			<version>${ck.crydis.version}</version>
+		</dependency>
+
 		<!--jeecg-tools-->
 		<dependency>
 			<groupId>org.jeecgframework.boot3</groupId>
